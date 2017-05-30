@@ -13,6 +13,8 @@ import javax.swing.JMenu;
 import java.awt.CardLayout;
 import java.awt.FlowLayout;
 import javax.swing.JPopupMenu;
+import javax.swing.WindowConstants;
+
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -25,11 +27,12 @@ public class PrincipalUI extends JFrame {
 
 	private JPanel contentPane;
 	protected JMenuItem mntmAadirArticulo;
-
+	protected JDesktopPane desktopPane;
+	
 	public PrincipalUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1008, 679);
-		
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
@@ -65,7 +68,7 @@ public class PrincipalUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(1, 0, 0, 0));
 		
-		JDesktopPane desktopPane = new JDesktopPane();
+		 desktopPane = new JDesktopPane();
 		contentPane.add(desktopPane);
 	}
 }
