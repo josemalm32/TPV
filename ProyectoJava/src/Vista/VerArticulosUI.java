@@ -18,11 +18,11 @@ import java.awt.Font;
 import javax.swing.JButton;
 
 public class VerArticulosUI extends JInternalFrame {
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JLabel lblNewLabel_2;
-	private JButton btnNewButton;
+	protected JTextField textField;
+	protected JTextField textField_1;
+	protected JTextField textField_2;
+	protected JLabel lblNewLabel_2;
+	protected JButton btnNewButton;
 
 	
 	public VerArticulosUI() {
