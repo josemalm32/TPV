@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 
 import Vista.NuevoArticuloUI;
 import Vista.PrincipalUI;
+import Vista.VerArticulosUI;
 
 public class controlPrincipal extends PrincipalUI {
 	
@@ -27,9 +28,24 @@ public class controlPrincipal extends PrincipalUI {
 		});
 		
 		
+		mntmConsultarArticulo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				controlVerArticulosUI verArticulosUI = new controlVerArticulosUI();
+				verArticulosUI.setResizable(false);
+				verArticulosUI.setClosable(true);
+				verArticulosUI.pack();
+				 desktopPane.add(verArticulosUI);
+				 verArticulosUI.setVisible(true);
+			}
+		});
+		
+		
+		
+		
 	}
 	
 	
+
 
 
 }

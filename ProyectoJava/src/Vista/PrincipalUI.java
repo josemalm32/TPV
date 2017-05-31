@@ -28,7 +28,7 @@ public class PrincipalUI extends JFrame {
 	private JPanel contentPane;
 	protected JMenuItem mntmAadirArticulo;
 	protected JDesktopPane desktopPane;
-	
+	protected JMenuItem mntmConsultarArticulo;
 	public PrincipalUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1008, 679);
@@ -43,7 +43,7 @@ public class PrincipalUI extends JFrame {
 
 		mnArticulos.add(mntmAadirArticulo);
 		
-		JMenuItem mntmConsultarArticulo = new JMenuItem("Consultar Articulo");
+		 mntmConsultarArticulo = new JMenuItem("Consultar Articulo");
 		mnArticulos.add(mntmConsultarArticulo);
 		
 		JMenu mnClientes = new JMenu("Clientes");
