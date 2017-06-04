@@ -4,35 +4,35 @@ import java.io.Serializable;
 
 public class Articulo implements Serializable{
 
-	private static final long serialVersionUID = 1L;
+	
 	
 	
 	private int ID;
 	private String Nombre;
-	private String Apellidos; 
+	private String Detalles; 
 	private float Precio;
 	
-	public Articulo(int iD, String nombre, String apellidos, float precio) {
+	public Articulo(int iD, String nombre, String detalles, float precio) {
 		super();
-		ID = iD;
-		Nombre = nombre;
-		Apellidos = apellidos;
-		Precio = precio;
+		this.ID = iD;
+		this.Nombre = nombre;
+		this.Detalles = detalles;
+		this.Precio = precio;
 	}
 
 	public int getID() {
-		return ID;
+		return this.ID;
 	}
 
 	public String getNombre() {
-		return Nombre;
+		return this.Nombre;
 	}
 
-	public String getApellidos() {
-		return Apellidos;
+	public String getDetalles() {
+		return this.Detalles;
 	}
 
 	public float getPrecio() {
-		return Precio;
+		return this.Precio;
 	}
 }

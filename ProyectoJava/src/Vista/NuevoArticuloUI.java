@@ -13,93 +13,63 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextPane;
 import java.awt.Font;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import net.miginfocom.swing.MigLayout;
 
 public class NuevoArticuloUI extends JInternalFrame {
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-
-
+	protected JTextField idTexField;
+	protected JTextField nombreText;
+	protected JTextField PrecioText;
+	protected JButton btnValidar;
+	protected JTextPane DetallePane;
+	
 	public NuevoArticuloUI() {
 		setTitle("Nuevo Articulo");
-		setBounds(100, 100, 469, 335);
-		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		getContentPane().setLayout(gridBagLayout);
-		
-		JLabel lblNewLabel = new JLabel("Alta Articulo");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel.gridx = 21;
-		gbc_lblNewLabel.gridy = 3;
-		getContentPane().add(lblNewLabel, gbc_lblNewLabel);
+		setBounds(100, 100, 633, 435);
+		getContentPane().setLayout(new MigLayout("", "[76px][161.00px][][][][][][][][][][][]", "[26px][][20px][23px][23px][20px][14px][][][][][][][][][][][][][]"));
 		
 		JLabel lblId = new JLabel("ID");
-		GridBagConstraints gbc_lblId = new GridBagConstraints();
-		gbc_lblId.insets = new Insets(0, 0, 5, 5);
-		gbc_lblId.gridx = 15;
-		gbc_lblId.gridy = 4;
-		getContentPane().add(lblId, gbc_lblId);
+		getContentPane().add(lblId, "cell 0 1,alignx right,aligny center");
 		
-		textField = new JTextField();
-		textField.setEditable(false);
-		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.gridwidth = 3;
-		gbc_textField.insets = new Insets(0, 0, 5, 5);
-		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField.gridx = 16;
-		gbc_textField.gridy = 4;
-		getContentPane().add(textField, gbc_textField);
-		textField.setColumns(10);
+		idTexField = new JTextField();
+		idTexField.setColumns(10);
+		getContentPane().add(idTexField, "cell 1 1,growx,aligny center");
+		
+		JLabel lblAltaArticulos = new JLabel("Alta Articulos");
+		lblAltaArticulos.setFont(new Font("Tahoma", Font.PLAIN, 42));
+		getContentPane().add(lblAltaArticulos, "cell 10 1,alignx center");
 		
 		JLabel lblNombreArticulo = new JLabel("Nombre Articulo");
-		GridBagConstraints gbc_lblNombreArticulo = new GridBagConstraints();
-		gbc_lblNombreArticulo.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNombreArticulo.gridx = 15;
-		gbc_lblNombreArticulo.gridy = 6;
-		getContentPane().add(lblNombreArticulo, gbc_lblNombreArticulo);
+		getContentPane().add(lblNombreArticulo, "cell 0 2,alignx left,aligny center");
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
-		gbc_textField_1.gridwidth = 4;
-		gbc_textField_1.insets = new Insets(0, 0, 5, 5);
-		gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_1.gridx = 16;
-		gbc_textField_1.gridy = 6;
-		getContentPane().add(textField_1, gbc_textField_1);
+		nombreText = new JTextField();
+		nombreText.setColumns(10);
+		getContentPane().add(nombreText, "cell 1 2,growx,aligny bottom");
 		
 		JLabel lblPreciound = new JLabel("Precio/Und");
-		GridBagConstraints gbc_lblPreciound = new GridBagConstraints();
-		gbc_lblPreciound.insets = new Insets(0, 0, 5, 5);
-		gbc_lblPreciound.gridx = 15;
-		gbc_lblPreciound.gridy = 8;
-		getContentPane().add(lblPreciound, gbc_lblPreciound);
+		getContentPane().add(lblPreciound, "cell 0 3,alignx right,aligny center");
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		GridBagConstraints gbc_textField_2 = new GridBagConstraints();
-		gbc_textField_2.gridwidth = 4;
-		gbc_textField_2.insets = new Insets(0, 0, 5, 5);
-		gbc_textField_2.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_2.gridx = 16;
-		gbc_textField_2.gridy = 8;
-		getContentPane().add(textField_2, gbc_textField_2);
+		PrecioText = new JTextField();
+		PrecioText.setColumns(10);
+		getContentPane().add(PrecioText, "cell 1 3,growx,aligny top");
 		
-		JButton btnValidar = new JButton("Validar");
+		btnValidar = new JButton("Validar");
 		btnValidar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		GridBagConstraints gbc_btnValidar = new GridBagConstraints();
-		gbc_btnValidar.insets = new Insets(0, 0, 5, 5);
-		gbc_btnValidar.gridx = 21;
-		gbc_btnValidar.gridy = 10;
-		getContentPane().add(btnValidar, gbc_btnValidar);
+		getContentPane().add(btnValidar, "cell 7 3,alignx left,aligny top");
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		getContentPane().add(btnCancelar, "cell 10 3,alignx left,aligny top");
+		
+		JLabel lblDetalles = new JLabel("Detalles");
+		getContentPane().add(lblDetalles, "cell 0 4,alignx right,aligny center");
+		
+		 DetallePane = new JTextPane();
+		getContentPane().add(DetallePane, "cell 1 4 10 16,grow");
 
 	}
 

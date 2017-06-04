@@ -17,9 +17,8 @@ public class controlPrincipal extends PrincipalUI {
 		
 		mntmAadirArticulo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			
-				NuevoArticuloUI nuevoArticuloUI = new NuevoArticuloUI();
-				nuevoArticuloUI.setResizable(false);
+				controlNuevoArticuloUI nuevoArticuloUI = new controlNuevoArticuloUI();
+				nuevoArticuloUI.setResizable(true);
 				nuevoArticuloUI.setClosable(true);
 				 nuevoArticuloUI.pack();
 				 desktopPane.add(nuevoArticuloUI);
@@ -31,7 +30,7 @@ public class controlPrincipal extends PrincipalUI {
 		mntmConsultarArticulo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				controlVerArticulosUI verArticulosUI = new controlVerArticulosUI();
-				verArticulosUI.setResizable(false);
+				verArticulosUI.setResizable(true);
 				verArticulosUI.setClosable(true);
 				verArticulosUI.pack();
 				 desktopPane.add(verArticulosUI);
