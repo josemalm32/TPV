@@ -1,4 +1,4 @@
-package Controlador;
+package control;
 
 import java.awt.EventQueue;
 
