@@ -3,9 +3,9 @@ package control.logica;
 import java.util.Set;
 
 import control.adaptador.GestorUnificado;
-import modelo.Articulo;
-import modelo.Pedido;
-import modelo.Persona;
+import Modelo.Articulo;
+import Modelo.Pedido;
+import Modelo.Persona;
 import utiles.Tipo;
 
 public class Gestor {
